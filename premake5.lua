@@ -1,11 +1,10 @@
 project "freetype"
-	location "freetype"
 	kind "StaticLib"
 	language "C"
-    staticruntime "off"
+    staticruntime "on"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/%{cfg.buildcfg}/%{prj.name}")
+	objdir ("bin-int/%{cfg.buildcfg}/%{prj.name}")
 
 	files
 	{
@@ -13,6 +12,7 @@ project "freetype"
 		"freetype/include/freetype/*.h",
 		"freetype/include/freetype/config/*.h",
 		"freetype/include/freetype/internal/*.h",
+		"freetype/src/*.h",
 
 		"freetype/src/autofit/autofit.c",
 		"freetype/src/base/ftbase.c",
@@ -89,10 +89,10 @@ project "msdfgen"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-    staticruntime "off"
+    staticruntime "on"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/%{cfg.buildcfg}/%{prj.name}")
+	objdir ("bin-int/%{cfg.buildcfg}/%{prj.name}")
 
 	files
 	{
