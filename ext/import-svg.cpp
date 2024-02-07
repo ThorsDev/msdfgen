@@ -3,6 +3,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "import-svg.h"
 
+#define MSDFGEN_DISABLE_SVG
 #ifndef MSDFGEN_DISABLE_SVG
 
 #include <cstdlib>
